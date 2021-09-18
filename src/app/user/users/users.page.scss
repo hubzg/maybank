@@ -1,0 +1,18 @@
+$primary: #efefef;
+
+.table-header {
+  background: #bababa;
+}
+.table {
+  border: 1px solid $primary;
+
+  &:nth-child(even) {
+    ion-col {
+      background: $primary;
+    }
+  }
+
+  ion-col {
+    border-right: 1px solid $primary;
+  }
+}

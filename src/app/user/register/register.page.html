@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+    <ion-list class="inputs-list" lines="full">
+
+      <ion-item class="">
+        <ion-label position="floating">Name</ion-label>
+        <ion-input formControlName="name" type="text" placeholder="Full Name" [disabled]="editable"></ion-input>
+      </ion-item>
+
+      <ion-item class="input-item">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="email" placeholder="Email" [disabled]="editable"></ion-input>
+      </ion-item>
+
+      <p class="ion-padding"><b>Address Details</b></p>
+      <ion-item class=" ion-padding-start">
+        <ion-label position="floating">Street</ion-label>
+        <ion-input formControlName="street" type="text" placeholder="Jalan Tun Perak," [disabled]="editable">
+        </ion-input>
+      </ion-item>
+
+      <ion-item class=" ion-padding-start">
+        <ion-label position="floating">Suite</ion-label>
+        <ion-input formControlName="suite" type="text" placeholder="No. 100" [disabled]="editable"></ion-input>
+      </ion-item>
+
+      <ion-item class=" ion-padding-start">
+        <ion-label position="floating">City</ion-label>
+        <ion-input formControlName="city" type="text" placeholder="Kuala Lumpur" [disabled]="editable"></ion-input>
+      </ion-item>
+
+      <ion-item class=" ion-padding-start">
+        <ion-label position="floating">Zip Code</ion-label>
+        <ion-input formControlName="zipCode" type="number" min="0" placeholder="50050" [disabled]="editable">
+        </ion-input>
+      </ion-item>
+
+      <ion-item class="">
+        <ion-label position="floating">Phone</ion-label>
+        <ion-input formControlName="phone" type="number" placeholder="010 11224433" [disabled]="editable"></ion-input>
+      </ion-item>
+
+      <ion-item class="">
+        <ion-label position="floating">Website</ion-label>
+        <ion-input formControlName="website" type="text" placeholder="https://my-company.com" [disabled]="editable">
+        </ion-input>
+      </ion-item>
+
+      <ion-item class="">
+        <ion-label position="floating">Company</ion-label>
+        <ion-input formControlName="company.name" type="text" placeholder="My User Company Bhd" [disabled]="editable">
+        </ion-input>
+      </ion-item>
+
+      <ion-button type="submit" expand="block" [fill]="editable ? 'outline' : 'solid'" [disabled]="!registerForm.valid">Register</ion-button>
+      <ion-button routerLink="/user/users" expand="block" [fill]="editable ? 'solid' : 'outline'"  [disabled]="!editable">View All Users</ion-button>
+      <p class="ion-text-center" *ngIf="editable">Registration done, you may now view all users</p>
+    </ion-list>
+
+  </form>
+
+</ion-content>

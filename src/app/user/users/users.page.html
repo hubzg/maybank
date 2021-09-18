@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>All Users</ion-title>
+    <ion-button slot="end" fill="outline" routerLink='/home' routerDirection='root'>
+      <ion-icon name="home-outline" color="primary" class="ion-padding"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="table-header">
+      <ion-col size=2 *ngFor="let header of headers" (click)="sortBy(header)">
+        <ion-item>
+          <b>{{header.value}}</b>
+          <ion-icon slot="end" class="ion-text-right" name="arrow-down" *ngIf="header.sort === -1"></ion-icon>
+          <ion-icon slot="end" class="ion-text-right" name="arrow-up" *ngIf="header.sort === 1"></ion-icon>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let user of users" class="table">
+      <ion-col>
+        {{user.name}}
+      </ion-col>
+      <ion-col>
+        {{user.email}}
+      </ion-col>
+      <ion-col>
+        {{user.address}}
+      </ion-col>
+      <ion-col>
+        {{user.phone}}
+      </ion-col>
+      <ion-col>
+        {{user.website}}
+      </ion-col>
+      <ion-col>
+        {{user.company.name}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
