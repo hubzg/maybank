@@ -4,6 +4,6 @@ After cloning the project.
 Serve the project by running these commands below:
 `git pull origin main`
 
-`npm instaill`
+`npm install`
 
 `ionic serve`
