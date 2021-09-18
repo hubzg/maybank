@@ -1,0 +1,7 @@
+{
+  "name": "maybank",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
